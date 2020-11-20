@@ -10,6 +10,7 @@ import 'package:biohunt/pages/tappe/tappa_completed/tappa_completed.dart';
 import 'package:biohunt/pages/tappe/tappa_widgets.dart';
 import 'package:biohunt/utils/keys.dart';
 
+
 class HomePage extends StatelessWidget {
   final TappaBloc _tappaBloc = TappaBloc(TappaDB.get());
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
