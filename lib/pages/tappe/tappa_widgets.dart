@@ -83,14 +83,16 @@ class TappePage extends StatelessWidget {
                           var tappaID = list[index].id;
                           final TappaBloc _tappeBloc =
                               BlocProvider.of<TappaBloc>(context);
-                          String message = "";
+
                           if (direction == DismissDirection.endToStart) {
+                            String message = "";
                             _tappeBloc.updateStatus(
                                 tappaID, TappaStatus.COMPLETE);
                             message = "Tappa completata";
+                            SnackBar snackbar =
+                                SnackBar(content: Text(message));
+                            Scaffold.of(context).showSnackBar(snackbar);
                           }
-                          SnackBar snackbar = SnackBar(content: Text(message));
-                          Scaffold.of(context).showSnackBar(snackbar);
                         },
                         background: Container(
                           color: Colors.grey,

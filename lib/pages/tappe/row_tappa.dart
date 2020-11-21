@@ -7,21 +7,24 @@ import 'package:flutter_map/plugin_api.dart';
 import 'package:biohunt/utils/app_constant.dart';
 import 'package:latlong/latlong.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:biohunt/pages/tappe/bloc/tappa_bloc.dart';
+import 'package:biohunt/bloc/bloc_provider.dart';
 
 class TappaRow extends StatelessWidget {
   final Tappe tappe;
   final List<String> labelNames = List();
-
   TappaRow(this.tappe);
 
   @override
   Widget build(BuildContext context) {
+    final TappaBloc tappeBloc = BlocProvider.of(context);
     return GestureDetector(
       onTap: () => {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailTappe(tappa: tappe),
+            builder: (context) =>
+                DetailTappe(tappa: tappe, tappeBloc: tappeBloc),
           ),
         )
       },
@@ -119,8 +122,10 @@ class TappaRow extends StatelessWidget {
 
 class DetailTappe extends StatelessWidget {
   final int _cIndex = 0;
+  final TappaBloc tappeBloc;
   final Tappe tappa;
-  DetailTappe({Key key, @required this.tappa}) : super(key: key);
+  DetailTappe({Key key, @required this.tappa, this.tappeBloc})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,6 +168,44 @@ class DetailTappe extends StatelessWidget {
           }
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton:
+          (!tappa.lastTappa && tappa.tappeStatus == TappaStatus.PENDING)
+              ? FloatingActionButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text("Conferma"),
+                          content: const Text("Hai completato questa tappa?"),
+                          actions: <Widget>[
+                            FlatButton(
+                                onPressed: () {
+                                  var tappaID = tappa.id;
+                                  tappeBloc.updateStatus(
+                                      tappaID, TappaStatus.COMPLETE);
+                                  Navigator.of(context).pop(true);
+                                },
+                                child: const Text("Tappa completata!")),
+                            FlatButton(
+                              onPressed: () => Navigator.of(context).pop(false),
+                              child: const Text("Annulla"),
+                            ),
+                          ],
+                        );
+                      },
+                    ).then((value) => {
+                      if (value) {
+                        Navigator.of(context).pop()
+                      }
+                    });
+                  },
+                  child: Icon(
+                    Icons.check,
+                  ),
+                )
+              : null,
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
