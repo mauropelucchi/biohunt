@@ -10,16 +10,23 @@ import 'package:biohunt/pages/tappe/tappa_completed/tappa_completed.dart';
 import 'package:biohunt/pages/tappe/tappa_widgets.dart';
 import 'package:biohunt/utils/keys.dart';
 
-
 class HomePage extends StatelessWidget {
   final TappaBloc _tappaBloc = TappaBloc(TappaDB.get());
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final startId;
+  final int _cIndex = 0;
+
+  HomePage({Key key, @required this.startId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final HomeBloc homeBloc = BlocProvider.of(context);
     homeBloc.filter.listen((filter) {
       _tappaBloc.updateFilters(filter);
+    });
+    PercorsoDB.get().getPercorsi().then((list) {
+      homeBloc.applyFilter(list[this.startId - 1].name, this.startId,
+          Filter.byPercorso(this.startId));
     });
     return Scaffold(
       key: _scaffoldKey,
@@ -42,6 +49,27 @@ class HomePage extends StatelessWidget {
             onPressed: () => _scaffoldKey.currentState.openDrawer()),
       ),
       drawer: SideDrawer(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _cIndex,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+              icon:
+                  Icon(Icons.home, color: Color.fromARGB(255, 0, 0, 0)),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.help,
+                  color: Color.fromARGB(255, 0, 0, 0)),
+              label: 'Guida')
+        ],
+        onTap: (index) {
+          if (index == 0) {
+             Navigator.pushReplacementNamed(context, '/firstpage');
+          } else if (index == 1) {
+             Navigator.pushReplacementNamed(context, '/help');
+          }
+        },
+      ),
       body: BlocProvider(
         bloc: _tappaBloc,
         child: GestureDetector(

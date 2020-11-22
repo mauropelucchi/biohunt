@@ -67,7 +67,7 @@ class SideDrawer extends StatelessWidget {
           BlocProvider(
             bloc: PercorsoBloc(PercorsoDB.get()),
             child: PercorsoPage(),
-          )
+          ),
         ],
       ),
     );
