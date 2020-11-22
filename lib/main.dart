@@ -3,6 +3,7 @@ import 'package:biohunt/bloc/bloc_provider.dart';
 import 'package:biohunt/pages/home/home.dart';
 import 'package:biohunt/pages/home/home_bloc.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter/services.dart' ;
 
 void main() => runApp(MyApp());
 
@@ -38,7 +39,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   Widget _buildImage(String assetName) {
     return Align(
-      child: Image.asset('assets/$assetName.jpg', width: 350.0),
+      child: Image.asset('assets/$assetName', width: 350.0),
       alignment: Alignment.bottomCenter,
     );
   }
@@ -47,7 +48,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
     const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+      titleTextStyle: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: Colors.white,
@@ -58,56 +59,45 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "#culturaAiPiediDelCanto",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('montecanto'),
+              "Benvenuti nell'app ufficiale del progetto #culturaAiPiediDelCanto, realizzato dall'Associazione LumacaRibelle e finanziato da Fondazione Bergamasca",
+          image: _buildImage('montecanto.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Esplora il Monte Canto",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('montecanto'),
+              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte",
+          image: _buildImage('help/img1.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Le Tappe",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('montecanto'),
+              "Ogni percorso è composto da 6 tappe. Cliccando sulla Tappa potrai ottenere il tragitto, scoprire le attività proposte e leggere informazioni culturali",
+          image: _buildImage('help/img2.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('montecanto'),
-          footer: RaisedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
-            color: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
+          title: "Completa tutte le tappe",
+          body:
+              "Dopo aver completato la tappa, premi il tasto di conferma. Il tuo obiettivo è completare tutti i punti del percorso",
+          image: _buildImage('help/img3.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Title of last page",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          image: _buildImage('montecanto'),
+          title: "Vuoi rivivere le attività?",
+          body:
+              "Clicca il punsante Tappe Completate per rivedere le attività che hai già scoperto: potrai rivivere ogni singola tappa oppure annullarla e ripercorrere tutto il percorso",
+          image: _buildImage('help/img4.png'),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Inizia l'esplorazione",
+          body:
+              "Inizia a esplorare il Monte Canto: scegli un percorso e parti per le attività proposte",
+          image: _buildImage('montecanto.jpg'),
           decoration: pageDecoration,
         ),
       ],
@@ -116,9 +106,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      skip: const Text('Skip'),
+      skip: const Text('Salta'),
       next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      done:
+          const Text('Pronti!', style: TextStyle(fontWeight: FontWeight.w600)),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
@@ -136,12 +127,14 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
-        title: Text("#culturaAiPiediDelParco"),
-        automaticallyImplyLeading: false
-      ),
+          title: Text("#culturaAiPiediDelParco"),
+          automaticallyImplyLeading: false),
       body: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -165,8 +158,7 @@ class FirstPage extends StatelessWidget {
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text(
-                          "\nPercorso Fontanella",
+                      Text("\nPercorso Fontanella",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),
@@ -189,8 +181,7 @@ class FirstPage extends StatelessWidget {
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text(
-                          "\nPercorso San Giovanni",
+                      Text("\nPercorso San Giovanni",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),
@@ -213,8 +204,7 @@ class FirstPage extends StatelessWidget {
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text(
-                          "\nPercorso Monte Canto",
+                      Text("\nPercorso Monte Canto",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),
