@@ -62,7 +62,7 @@ class AboutUsScreen extends StatelessWidget {
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
                       ),
                       subtitle: Text(
-                        "#culturaAiPiediDelMonteCanto",
+                        "#CULTURAaiPiediDelCanto",
                         key: ValueKey(AboutUsKeys.PROJECT_NAME),
                       ),
                     ),

@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
       key: _scaffoldKey,
       appBar: AppBar(
         title: StreamBuilder<String>(
-            initialData: Percorso.getFontanella().name,
+            initialData: Percorso.getPercorso1().name,
             stream: homeBloc.title,
             builder: (context, snapshot) {
               return Text(

@@ -18,7 +18,7 @@ class SideDrawer extends StatelessWidget {
         padding: EdgeInsets.all(0.0),
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("#CulturaAiPiediDelCanto"),
+            accountName: Text("#CULTURAaiPiediDelCanto"),
             accountEmail: Text("associazionelumacaribelle@gmail.com"),
             otherAccountsPictures: <Widget>[
               IconButton(
@@ -37,17 +37,17 @@ class SideDrawer extends StatelessWidget {
             ],
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
-              backgroundImage: AssetImage("assets/montecanto.jpg"),
+              backgroundImage: AssetImage("assets/progetto.jpeg"),
             ),
           ),
           ListTile(
               leading: Icon(Icons.inbox),
               title: Text(
-                "Fontanella",
-                key: ValueKey(SideDrawerKeys.FONTANELLA),
+                Percorso.getPercorso1().name,
+                key: ValueKey(SideDrawerKeys.PERCORSO1),
               ),
               onTap: () {
-                var percorso = Percorso.getFontanella();
+                var percorso = Percorso.getPercorso1();
                 homeBloc.applyFilter(
                     percorso.name, percorso.id, Filter.byPercorso(percorso.id));
                 Navigator.pop(context);
@@ -55,11 +55,23 @@ class SideDrawer extends StatelessWidget {
           ListTile(
               leading: Icon(Icons.inbox),
               title: Text(
-                "San Giovanni",
-                key: ValueKey(SideDrawerKeys.SANGIOVANNI),
+                Percorso.getPercorso2().name,
+                key: ValueKey(SideDrawerKeys.PERCORSO2),
               ),
               onTap: () {
-                var percorso = Percorso.getSanGiovanni();
+                var percorso = Percorso.getPercorso2();
+                homeBloc.applyFilter(
+                    percorso.name, percorso.id, Filter.byPercorso(percorso.id));
+                Navigator.pop(context);
+              }),
+          ListTile(
+              leading: Icon(Icons.inbox),
+              title: Text(
+                Percorso.getPercorso3().name,
+                key: ValueKey(SideDrawerKeys.PERCORSO3),
+              ),
+              onTap: () {
+                var percorso = Percorso.getPercorso3();
                 homeBloc.applyFilter(
                     percorso.name, percorso.id, Filter.byPercorso(percorso.id));
                 Navigator.pop(context);

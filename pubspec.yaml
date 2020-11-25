@@ -68,6 +68,10 @@ flutter:
       - assets/logo.png
       - assets/facebook_logo.png
       - assets/montecanto.jpg
+      - assets/progetto.jpeg
+      - assets/percorso1.jpeg
+      - assets/percorso2.jpeg
+      - assets/percorso3.jpeg
       - assets/help/img1.png
       - assets/help/img2.png
       - assets/help/img3.png

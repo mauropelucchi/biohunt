@@ -11,8 +11,10 @@ class AboutUsKeys {
 class SideDrawerKeys {
   static const DRAWER = 'drawer';
   static const DRAWER_PERCORSI = 'drawerPercorsi';
-  static const SANGIOVANNI = 'sangiovanni';
-  static const FONTANELLA = 'fontenella';
+  static const PERCORSO1 = 'percorso1';
+  static const PERCORSO2 = 'percorso2';
+  static const PERCORSO3 = 'percorso3';
+
 }
 
 class HomePageKeys {

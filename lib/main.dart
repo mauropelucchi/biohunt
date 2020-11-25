@@ -46,7 +46,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
+    const bodyStyle = TextStyle(fontSize: 15.0);
     const pageDecoration = const PageDecoration(
       titleTextStyle: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
@@ -59,10 +59,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       pages: [
         PageViewModel(
-          title: "#culturaAiPiediDelCanto",
+          title: "#CULTURAaiPiediDelCanto",
           body:
-              "Benvenuti nell'app ufficiale del progetto #culturaAiPiediDelCanto, realizzato dall'Associazione LumacaRibelle e finanziato da Fondazione Bergamasca",
-          image: _buildImage('montecanto.jpg'),
+              "“Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima” (Keri Smith). Un progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca",
+          image: _buildImage('progetto.jpeg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -75,7 +75,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Le Tappe",
           body:
-              "Ogni percorso è composto da 6 tappe. Cliccando sulla Tappa potrai ottenere il tragitto, scoprire le attività proposte e leggere informazioni culturali",
+              "Ogni percorso è composto da 6 tappe. Clicca sulla Tappa per ottenere il tragitto, scoprire le attività proposte e leggere qualche curiosità sul territorio",
           image: _buildImage('help/img2.png'),
           decoration: pageDecoration,
         ),
@@ -89,15 +89,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Vuoi rivivere le attività?",
           body:
-              "Clicca il punsante Tappe Completate per rivedere le attività che hai già scoperto: potrai rivivere ogni singola tappa oppure annullarla e ripercorrere tutto il percorso",
+              "Clicca sul pulsante Tappe Completate per rivedere le attività che hai già scoperto, rivivere ogni singola tappa oppure ricominciare da capo rifacendo il percorso!",
           image: _buildImage('help/img4.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Inizia l'esplorazione",
+          title: "Inizia l'esplorazione!",
           body:
               "Inizia a esplorare il Monte Canto: scegli un percorso e parti per le attività proposte",
-          image: _buildImage('montecanto.jpg'),
+          image: _buildImage('progetto.jpeg'),
           decoration: pageDecoration,
         ),
       ],
@@ -133,7 +133,7 @@ class FirstPage extends StatelessWidget {
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
-          title: Text("#culturaAiPiediDelParco"),
+          title: Text("#CULTURAaiPiediDelCanto"),
           automaticallyImplyLeading: false),
       body: Padding(
         padding: EdgeInsets.all(20.0),
@@ -154,11 +154,11 @@ class FirstPage extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
                     child: Stack(children: <Widget>[
-                      Image.asset('assets/montecanto.jpg',
+                      Image.asset('assets/percorso1.jpeg',
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text("\nPercorso Fontanella",
+                      Text("\nLa Biofficina del Monte Canto (Carvico)",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),
@@ -177,11 +177,11 @@ class FirstPage extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
                     child: Stack(children: <Widget>[
-                      Image.asset('assets/montecanto.jpg',
+                      Image.asset('assets/percorso2.jpeg',
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text("\nPercorso San Giovanni",
+                      Text("\nPietre e vigneti (tra Carvico e Villa d’Adda)",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),
@@ -200,11 +200,11 @@ class FirstPage extends StatelessWidget {
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(10.0),
                     child: Stack(children: <Widget>[
-                      Image.asset('assets/montecanto.jpg',
+                      Image.asset('assets/percorso3.jpeg',
                           fit: BoxFit.fill,
                           width: MediaQuery.of(context).size.width * 0.9,
                           height: MediaQuery.of(context).size.height * 0.23),
-                      Text("\nPercorso Monte Canto",
+                      Text("\nLe due Torri (Sotto il Monte Giovanni XXIII)",
                           style: TextStyle(color: Colors.white)),
                     ])),
               ),

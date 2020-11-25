@@ -25,19 +25,27 @@ class Percorso {
     }
   }
 
-  Percorso.getFontanella()
+  Percorso.getPercorso1()
       : this.update(
             id: 1,
-            name: "Fontanella",
+            name: "La Biofficina del Monte Canto",
             colorName: "Grey",
             colorCode: Colors.grey.value);
 
-  Percorso.getSanGiovanni()
+  Percorso.getPercorso2()
       : this.update(
             id: 2,
-            name: "San Giovanni",
+            name: "Pietre e vigneti",
             colorName: "Grey",
             colorCode: Colors.grey.value);
+
+  Percorso.getPercorso3()
+      : this.update(
+            id: 3,
+            name: "Le due Torri",
+            colorName: "Grey",
+            colorCode: Colors.grey.value);
+
 
   Percorso.fromMap(Map<String, dynamic> map)
       : this.update(
