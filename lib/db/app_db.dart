@@ -190,19 +190,19 @@ class AppDatabase {
           ');');
       txn.rawInsert('INSERT INTO '
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbImage})'
-          ' VALUES(3003, "Esplorazioni", 45.713556, 9.477972, 3, 0, FALSE,'
+          ' VALUES(3004, "Esplorazioni", 45.713556, 9.477972, 3, 0, FALSE,'
           '"Un Tesoro Nascosto: crea un piccolo oggetto artistico con materiale naturale: nascondilo e poi crea dei segnali sul terreno per ritrovarlo, utilizzando bastoni, foglie o altri sassolini\nPersonaggi del Bosco: trova e documenta facce, volti o personaggi mentre cammini nel bosco. Cercali nelle radici, tra i sassi, tra i rami degli alberi, nelle nuvole, ecc.\nUn Richiamo Speciale: esiste un richiamo particolare per attirare vicino gli uccelli del bosco: consiste in un semplice “pssh” ripetuto lentamente e in modo regolare tre o quattro volte. Ripeti la serie per alcune volte e poi fermati a osservare e ascoltare se qualche uccellino si è avvicinato. Usa il richiamo solo se sei sicuro di non disturbare uccelli che stanno facendo il nido.\nCapanne in Miniatura: raccogli tutto il materiale che riesci per costruire una o più micro-capanne nel bosco. Scegli un posto che sia visibile anche dal sentiero, in modo che chi lo percorre possa ammirare il tuo villaggio in miniatura.\nIl sentiero invisibile: fatti aiutare da un adulto e cammina a occhi chiusi per circa 50 metri. Tocca, senti, annusa. Cerca di ricordare e scrivi tutte le sensazioni provate senza la vista.",'
           '"assets/percorso3.jpeg"'
           ');');
       txn.rawInsert('INSERT INTO '
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbImage})'
-          ' VALUES(3004, "Arrivo_Campanile di Fontanella", 45.714750, 9.513528, 3, 0, FALSE,'
+          ' VALUES(3005, "Arrivo_Campanile di Fontanella", 45.714750, 9.513528, 3, 0, FALSE,'
           '"Lo sai che? Fontanella dà il nome a una contrada di Sotto il Monte. È una località conosciuta soprattutto per l\'antica abbazia di Sant\'Egidio abate, fondata nel 1080, di cui rimane l’omonima Cappella Vescovile. Nel 1964, colpito dalla morte di Papa Giovanni XXIII, padre David Maria Turoldo, religioso e poeta, approda in questo luogo (vi rimarrà sino alla sua morte) per fondare una comunità religiosa orientata al rinnovamento della preghiera cristiana.\nPoesia Naturale: pensa a una parola riferita a qualcosa che hai visto oggi e ti ha colpito; scrivila in verticale e usa le lettere che la compongono come iniziali dei versi di una tua poesia.",'
           '"assets/percorso3/3.jpg"'
           ');');
       txn.rawInsert('INSERT INTO '
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbImage})'
-          ' VALUES(3005, "PERCORSO COMPLETATO!", 45.714750, 9.513528, 3, 0, TRUE,'
+          ' VALUES(3006, "PERCORSO COMPLETATO!", 45.714750, 9.513528, 3, 0, TRUE,'
           '"Quando torni a casa, ricordati che puoi sperimentare queste esplorazioni in altri luoghi, persino in casa o in città",'
           '"assets/percorso3.jpeg"'
           ');');
