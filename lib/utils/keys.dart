@@ -8,6 +8,15 @@ class AboutUsKeys {
   static const VERSION_NUMBER = 'versionNumber';
 }
 
+class KitKeys {
+  static const KIT = "kit";
+}
+
+class ProgettoKeys {
+  static const PROGETTO = "progetto";
+}
+
+
 class SideDrawerKeys {
   static const DRAWER = 'drawer';
   static const DRAWER_PERCORSI = 'drawerPercorsi';

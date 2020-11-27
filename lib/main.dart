@@ -68,7 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Esplora il Monte Canto",
           body:
-              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte",
+              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte. Prima di partire consulta la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni.",
           image: _buildImage('help/img1.png'),
           decoration: pageDecoration,
         ),

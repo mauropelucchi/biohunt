@@ -58,7 +58,7 @@ class AboutUsScreen extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.perm_identity, color: Colors.black),
                       title: Text(
-                        "Associazione Lumaca Ribelle",
+                        "Un progetto dell’Associazione Lumaca Ribelle\nRealizzato in collaborazione con Labirinto\nCon il contributo della Fondazione della Comunità Bergamasca © Associazione Lumaca Ribelle 2020",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
                       ),
                       subtitle: Text(

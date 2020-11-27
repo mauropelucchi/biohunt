@@ -4,6 +4,8 @@ import 'package:biohunt/pages/tappe/bloc/tappa_bloc.dart';
 import 'package:biohunt/pages/percorsi/percorso_db.dart';
 import 'package:biohunt/pages/percorsi/percorso.dart';
 import 'package:biohunt/pages/about/about_us.dart';
+import 'package:biohunt/pages/about/progetto.dart';
+import 'package:biohunt/pages/about/kit.dart';
 import 'package:biohunt/pages/home/home_bloc.dart';
 import 'package:biohunt/pages/percorsi/percorso_bloc.dart';
 import 'package:biohunt/pages/percorsi/percorso_widget.dart';
@@ -40,6 +42,32 @@ class SideDrawer extends StatelessWidget {
               backgroundImage: AssetImage("assets/progetto.jpeg"),
             ),
           ),
+          ListTile(
+              leading: Icon(Icons.question_answer),
+              title: Text(
+                "Vuoi sapere di più del progetto?",
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProgettoScreen(),
+                  ),
+                );
+              }),
+          ListTile(
+              leading: Icon(Icons.build),
+              title: Text(
+                "Crea il tuo kit",
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => KitScreen(),
+                  ),
+                );
+              }),
           ListTile(
               leading: Icon(Icons.inbox),
               title: Text(
