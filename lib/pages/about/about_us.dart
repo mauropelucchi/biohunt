@@ -60,11 +60,7 @@ class AboutUsScreen extends StatelessWidget {
                       title: Text(
                         "Un progetto dell’Associazione Lumaca Ribelle\nRealizzato in collaborazione con Labirinto\nCon il contributo della Fondazione della Comunità Bergamasca © Associazione Lumaca Ribelle 2020",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
-                      ),
-                      subtitle: Text(
-                        "#CULTURAaiPiediDelCanto",
-                        key: ValueKey(AboutUsKeys.PROJECT_NAME),
-                      ),
+                      )
                     ),
                     ListTile(
                         leading: Icon(Icons.email, color: Colors.black),

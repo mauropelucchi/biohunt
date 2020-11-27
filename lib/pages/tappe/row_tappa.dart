@@ -196,10 +196,8 @@ class DetailTappe extends StatelessWidget {
                         );
                       },
                     ).then((value) => {
-                      if (value) {
-                        Navigator.of(context).pop()
-                      }
-                    });
+                          if (value) {Navigator.of(context).pop()}
+                        });
                   },
                   child: Icon(
                     Icons.check,
@@ -208,16 +206,16 @@ class DetailTappe extends StatelessWidget {
               : null,
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Column(
+        child: SingleChildScrollView(
+            child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text("Ti trovi sul percorso " + tappa.percorsoName),
             Text(tappa.description),
             Image(
               image: AssetImage(tappa.image),
             ),
           ],
-        ),
+        )),
       ),
     );
   }
