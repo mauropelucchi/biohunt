@@ -204,9 +204,46 @@ class DetailTappe extends StatelessWidget {
                   ),
                 )
               : null,
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
+      body: Container(
+          child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView(children: <Widget>[
+                (tappa.description != "") ? Card(
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.description, color: Colors.black),
+                        title: Text("Lo sai che?"),
+                        subtitle: Text(tappa.description)
+                      )
+                    ],
+                  ),
+                ): null,
+                (tappa.esplorazione != "") ? Card(
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.search, color: Colors.black),
+                        title: Text("Esplorazione"),
+                        subtitle: Text(tappa.esplorazione)
+                      )
+                    ],
+                  ),
+                ): null,
+                (tappa.indicazioni != "") ? Card(
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(Icons.map, color: Colors.black),
+                        title: Text("Indicazioni"),
+                        subtitle: Text(tappa.indicazioni)
+                      )
+                    ],
+                  ),
+                ): null
+              ]))),
+
+      /*child: SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -216,7 +253,7 @@ class DetailTappe extends StatelessWidget {
             ),
           ],
         )),
-      ),
+      ),*/
     );
   }
 }
