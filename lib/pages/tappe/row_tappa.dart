@@ -208,39 +208,55 @@ class DetailTappe extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView(children: <Widget>[
-                (tappa.description != "") ? Card(
-                  child: Column(
-                    children: <Widget>[
-                      ListTile(
-                        leading: Icon(Icons.description, color: Colors.black),
-                        title: Text("Lo sai che?"),
-                        subtitle: Text(tappa.description)
+                (tappa.description != "")
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading: Icon(Icons.description,
+                                    color: Colors.black),
+                                title: Text("Lo sai che?"),
+                                subtitle: Text(tappa.description))
+                          ],
+                        ),
                       )
-                    ],
-                  ),
-                ): null,
-                (tappa.esplorazione != "") ? Card(
-                  child: Column(
-                    children: <Widget>[
-                      ListTile(
-                        leading: Icon(Icons.search, color: Colors.black),
-                        title: Text("Esplorazione"),
-                        subtitle: Text(tappa.esplorazione)
+                    : Card(),
+                (tappa.esplorazione != "")
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon(Icons.search, color: Colors.black),
+                                title: Text("Esplorazione"),
+                                subtitle: Text(tappa.esplorazione))
+                          ],
+                        ),
                       )
-                    ],
-                  ),
-                ): null,
-                (tappa.indicazioni != "") ? Card(
-                  child: Column(
-                    children: <Widget>[
-                      ListTile(
-                        leading: Icon(Icons.map, color: Colors.black),
-                        title: Text("Indicazioni"),
-                        subtitle: Text(tappa.indicazioni)
+                    : Card(),
+                (tappa.indicazioni != "")
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading: Icon(Icons.map, color: Colors.black),
+                                title: Text("Indicazioni"),
+                                subtitle: Text(tappa.indicazioni))
+                          ],
+                        ),
                       )
-                    ],
-                  ),
-                ): null
+                    : Card(),
+                (tappa.image != "")
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            Image(
+                              image: AssetImage(tappa.image),
+                            )
+                          ],
+                        ),
+                      )
+                    : Card()
               ]))),
 
       /*child: SingleChildScrollView(
