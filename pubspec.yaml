@@ -66,6 +66,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
       - assets/logo.png
+      - assets/labirinto.jpeg
+      - assets/fondazione.jpeg
       - assets/facebook_logo.png
       - assets/montecanto.jpg
       - assets/progetto.jpeg
@@ -73,8 +75,8 @@ flutter:
       - assets/percorso2.jpeg
       - assets/percorso3.jpeg
       - assets/help/img1.png
-      - assets/help/img2.png
-      - assets/help/img3.png
+      - assets/help/img2.jpeg
+      - assets/help/img3.jpeg
       - assets/help/img4.png
       - assets/percorso1/1.jpg
       - assets/percorso1/2.png
@@ -83,14 +85,17 @@ flutter:
       - assets/percorso1/5.jpeg
       - assets/percorso1/6.png
       - assets/percorso2/1.png
-      - assets/percorso2/2.jpg
-      - assets/percorso2/3.jpg
-      - assets/percorso2/4.jpg
-      - assets/percorso2/5.png
-      - assets/percorso2/6.png
+      - assets/percorso2/2.jpeg
+      - assets/percorso2/3.jpeg
+      - assets/percorso2/4.jpeg
+      - assets/percorso2/5.jpeg
+      - assets/percorso2/6.jpeg
       - assets/percorso3/1.png
-      - assets/percorso3/2.jpg
-      - assets/percorso3/3.jpg
+      - assets/percorso3/2.jpeg
+      - assets/percorso3/3.jpeg
+      - assets/percorso3/4.jpeg
+      - assets/percorso3/5.jpeg
+      - assets/percorso3/6.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

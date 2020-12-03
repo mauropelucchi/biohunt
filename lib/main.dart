@@ -48,7 +48,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 15.0);
     const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w700),
+      titleTextStyle: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
       pageColor: Colors.white,
@@ -61,29 +61,29 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "#CULTURAaiPiediDelCanto",
           body:
-              "“Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima” (Keri Smith). Un progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca",
+              "“Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima” (Keri Smith).\nUn progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca",
           image: _buildImage('progetto.jpeg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Esplora il Monte Canto",
           body:
-              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte. Prima di partire consulta la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni.",
+              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte.\n\nPrima di partire consulta la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni.",
           image: _buildImage('help/img1.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Le Tappe",
+          title: "Le tappe",
           body:
-              "Ogni percorso è composto da 6 tappe. Clicca sulla Tappa per ottenere il tragitto, scoprire le attività proposte e leggere qualche curiosità sul territorio",
-          image: _buildImage('help/img2.png'),
+              "Ogni percorso è composto da 6 tappe. Clicca sulla tappa per ottenere il tragitto, scoprire le attività proposte e leggere qualche curiosità sul territorio",
+          image: _buildImage('help/img2.jpeg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Completa tutte le tappe",
           body:
               "Dopo aver completato la tappa, premi il tasto di conferma. Il tuo obiettivo è completare tutti i punti del percorso",
-          image: _buildImage('help/img3.png'),
+          image: _buildImage('help/img3.jpeg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
@@ -96,7 +96,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Inizia l'esplorazione!",
           body:
-              "Inizia a esplorare il Monte Canto: scegli un percorso e parti per le attività proposte",
+              "Inizia a esplorare il Monte Canto. Scegli un percorso e vivi l’avventura.\nBuona esplorazione",
           image: _buildImage('progetto.jpeg'),
           decoration: pageDecoration,
         ),

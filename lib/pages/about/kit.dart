@@ -31,10 +31,10 @@ class KitScreen extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.build, color: Colors.black),
                       title: Text(
-                        "Prima di partire per l’esplorazione, potrebbe essere utile avere con sé alcuni oggetti utili!"
+                        "Durante l’esplorazione potresti avere bisogno di alcuni oggetti utili! Preparali prima di partire."
                       ),
                       subtitle: Text(
-                        "\n\nEcco qualche suggerimento:\nuna macchina fotografica\nuna lente di ingrandimento\nun quaderno per appunti e schizzi\nuna matita o una penna\nscotch, spago, forbiciecolla\nuna borsa/sacchetto\nalcuni barattoli o contenito ririciclati",
+                        "\n\nEcco qualche suggerimento:\n\n- una macchina fotografica\n\n- una lente di ingrandimento\n\n- un quaderno per appunti e schizzi\n\n- una matita o una penna\nscotch, spago, forbici e colla\n\n- una borsa/sacchetto\n\n- alcuni barattoli o contenitori riciclati",
                         key: ValueKey(AboutUsKeys.PROJECT_NAME),
                       ),
                     )

@@ -221,15 +221,80 @@ class DetailTappe extends StatelessWidget {
                         ),
                       )
                     : Card(),
-                (tappa.esplorazione != "")
+                (tappa.esplorazione != "" && tappa.id != 3004)
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon((tappa.lastTappa) ? Icons.done : Icons.search, color: Colors.black),
+                                title: Text((tappa.lastTappa) ? "Percorso completato" : "Esplorazione"),
+                                subtitle: Text(tappa.esplorazione))
+                          ],
+                        ),
+                      )
+                    : Card(),
+                (tappa.esplorazione != "" && tappa.id == 3004)
                     ? Card(
                         child: Column(
                           children: <Widget>[
                             ListTile(
                                 leading:
                                     Icon(Icons.search, color: Colors.black),
-                                title: Text("Esplorazione"),
-                                subtitle: Text(tappa.esplorazione))
+                                title: Text(tappa.esplorazione.split("\n")[0].split(":")[0].trim()),
+                                subtitle: Text(tappa.esplorazione.split("\n")[0].split(":")[1].trim()))
+                          ],
+                        ),
+                      )
+                    : Card(),
+                (tappa.esplorazione != "" && tappa.id == 3004)
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon(Icons.search, color: Colors.black),
+                                title: Text(tappa.esplorazione.split("\n")[1].split(":")[0].trim()),
+                                subtitle: Text(tappa.esplorazione.split("\n")[1].split(":")[1].trim()))
+                          ],
+                        ),
+                      )
+                    : Card(),
+                (tappa.esplorazione != "" && tappa.id == 3004)
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon(Icons.search, color: Colors.black),
+                                title: Text(tappa.esplorazione.split("\n")[2].split(":")[0].trim()),
+                                subtitle: Text(tappa.esplorazione.split("\n")[2].split(":")[1].trim()))
+                          ],
+                        ),
+                      )
+                    : Card(),
+                (tappa.esplorazione != "" && tappa.id == 3004)
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon(Icons.search, color: Colors.black),
+                                title: Text(tappa.esplorazione.split("\n")[3].split(":")[0].trim()),
+                                subtitle: Text(tappa.esplorazione.split("\n")[3].split(":")[1].trim()))
+                          ],
+                        ),
+                      )
+                    : Card(),
+                (tappa.esplorazione != "" && tappa.id == 3004)
+                    ? Card(
+                        child: Column(
+                          children: <Widget>[
+                            ListTile(
+                                leading:
+                                    Icon(Icons.search, color: Colors.black),
+                                title: Text(tappa.esplorazione.split("\n")[4].split(":")[0].trim()),
+                                subtitle: Text(tappa.esplorazione.split("\n")[4].split(":")[1].trim()))
                           ],
                         ),
                       )
