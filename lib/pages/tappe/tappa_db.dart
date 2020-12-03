@@ -26,11 +26,11 @@ class TappaDB {
           "${Tappe.tblTappa}.${Tappe.dbStatus} = ${tappaStatus.index}";
       whereClause = "WHERE $tappaWhereClause";
     }
-
     var result = await db.rawQuery(
         'SELECT ${Tappe.tblTappa}.*,${Percorso.tblPercorso}.${Percorso.dbName},${Percorso.tblPercorso}.${Percorso.dbColorCode} '
         'FROM ${Tappe.tblTappa} '
         'INNER JOIN ${Percorso.tblPercorso} ON ${Tappe.tblTappa}.${Tappe.dbPercorsoID} = ${Percorso.tblPercorso}.${Percorso.dbId} $whereClause GROUP BY ${Tappe.tblTappa}.${Tappe.dbId} ORDER BY ${Tappe.tblTappa}.${Tappe.dbId} ASC;');
+
 
     return _bindData(result);
   }
@@ -42,7 +42,9 @@ class TappaDB {
       myTappa.percorsoName = item[Percorso.dbName];
       myTappa.percorsoColor = item[Percorso.dbColorCode];
       tappe.add(myTappa);
+      
     }
+    
     return tappe;
   }
 
@@ -56,6 +58,8 @@ class TappaDB {
         'SELECT ${Tappe.tblTappa}.*,${Percorso.tblPercorso}.${Percorso.dbName},${Percorso.tblPercorso}.${Percorso.dbColorCode} '
         'FROM ${Tappe.tblTappa} '
         'INNER JOIN ${Percorso.tblPercorso} ON ${Tappe.tblTappa}.${Tappe.dbPercorsoID} = ${Percorso.tblPercorso}.${Percorso.dbId} WHERE ${Tappe.tblTappa}.${Tappe.dbPercorsoID}=$percorsoId $whereStatus GROUP BY ${Tappe.tblTappa}.${Tappe.dbId} ORDER BY ${Tappe.tblTappa}.${Tappe.dbId} ASC;');
+
+
     return _bindData(result);
   }
 
