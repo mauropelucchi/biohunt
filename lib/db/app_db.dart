@@ -38,12 +38,18 @@ class AppDatabase {
         await _createTappaTable(db);
         didInit = true;
       }, onUpgrade: (Database db, int oldVersion, int newVersion) async {
-        await db.execute("DROP TABLE ${Tappe.tblTappa}");
-        await db.execute("DROP TABLE ${Percorso.tblPercorso}");
+        await _clean(db);
         await _createPercorsoTable(db);
         await _createTappaTable(db);
         didInit = true;
       });
+  }
+
+  Future _clean(Database db) {
+    return db.transaction((Transaction txn) async {
+      txn.execute("DROP TABLE ${Tappe.tblTappa}");
+      txn.execute("DROP TABLE ${Percorso.tblPercorso}");
+    });
   }
 
   Future _createPercorsoTable(Database db) {
