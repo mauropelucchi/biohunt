@@ -36,7 +36,7 @@ class AboutUsScreen extends StatelessWidget {
                       leading: Icon(Icons.update, color: Colors.black),
                       title: Text("Version"),
                       subtitle: Text(
-                        "1.2.0",
+                        "1.3.0",
                         key: ValueKey(AboutUsKeys.VERSION_NUMBER),
                       ),
                     )
@@ -58,7 +58,7 @@ class AboutUsScreen extends StatelessWidget {
                     ListTile(
                       leading: Icon(Icons.info, color: Colors.black),
                       title: Text(
-                        "Un progetto dell’Associazione Lumaca Ribelle\n© Associazione Lumaca Ribelle 2020",
+                        "Un progetto dell’Associazione Lumaca Ribelle",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
                       )
                     ),
@@ -70,7 +70,6 @@ class AboutUsScreen extends StatelessWidget {
                       )
                     ),
                     ListTile(
-                      leading: Icon(Icons.info, color: Colors.black),
                       title: Text(
                         "Con il contributo della Fondazione della Comunità Bergamasca",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
@@ -122,7 +121,7 @@ class AboutUsScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: ListTile(
-                        subtitle: Text("Copyright 2020 Associazione Lumaca Ribelle"),
+                        subtitle: Text("Copyright © Associazione Lumaca Ribelle 2020"),
                       ),
                     ),
                   ],
