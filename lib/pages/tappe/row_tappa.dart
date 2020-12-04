@@ -129,6 +129,114 @@ class DetailTappe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var list_w = List<Widget>();
+
+    if (tappa.description != "") {
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.description, color: Colors.black),
+                title: Text("Lo sai che?"),
+                subtitle: Text(tappa.description))
+          ],
+        ),
+      ));
+    }
+
+    if (tappa.esplorazione != "" && tappa.id != 3004) {
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon((tappa.lastTappa) ? Icons.done : Icons.search,
+                    color: Colors.black),
+                title: Text(
+                    (tappa.lastTappa) ? "Percorso completato" : "Esplorazione"),
+                subtitle: Text(tappa.esplorazione))
+          ],
+        ),
+      ));
+    }
+
+    if (tappa.esplorazione != "" && tappa.id == 3004) {
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.search, color: Colors.black),
+                title: Text(tappa.titoloesplorazione.split("|")[0]),
+                subtitle: Text(tappa.esplorazione.split("|")[0]))
+          ],
+        ),
+      ));
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.search, color: Colors.black),
+                title: Text(tappa.titoloesplorazione.split("|")[1]),
+                subtitle: Text(tappa.esplorazione.split("|")[1]))
+          ],
+        ),
+      ));
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.search, color: Colors.black),
+                title: Text(tappa.titoloesplorazione.split("|")[2]),
+                subtitle: Text(tappa.esplorazione.split("|")[2]))
+          ],
+        ),
+      ));
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.search, color: Colors.black),
+                title: Text(tappa.titoloesplorazione.split("|")[3]),
+                subtitle: Text(tappa.esplorazione.split("|")[3]))
+          ],
+        ),
+      ));
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.search, color: Colors.black),
+                title: Text(tappa.titoloesplorazione.split("|")[4]),
+                subtitle: Text(tappa.esplorazione.split("|")[4]))
+          ],
+        ),
+      ));
+    }
+
+    if (tappa.indicazioni != "") {
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            ListTile(
+                leading: Icon(Icons.map, color: Colors.black),
+                title: Text("Indicazioni"),
+                subtitle: Text(tappa.indicazioni))
+          ],
+        ),
+      ));
+    }
+
+    if (tappa.image != "") {
+      list_w.add(Card(
+        child: Column(
+          children: <Widget>[
+            Image(
+              image: AssetImage(tappa.image),
+            )
+          ],
+        ),
+      ));
+    }
+
     // Use the Todo to create the UI.
     return Scaffold(
       appBar: AppBar(
@@ -207,134 +315,7 @@ class DetailTappe extends StatelessWidget {
       body: Container(
           child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: ListView(children: <Widget>[
-                (tappa.description != "")
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading: Icon(Icons.description,
-                                    color: Colors.black),
-                                title: Text("Lo sai che?"),
-                                subtitle: Text(tappa.description))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id != 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon((tappa.lastTappa) ? Icons.done : Icons.search, color: Colors.black),
-                                title: Text((tappa.lastTappa) ? "Percorso completato" : "Esplorazione"),
-                                subtitle: Text(tappa.esplorazione))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id == 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon(Icons.search, color: Colors.black),
-                                title: Text(tappa.esplorazione.split("\n")[0].split(":")[0].trim()),
-                                subtitle: Text(tappa.esplorazione.split("\n")[0].split(":")[1].trim()))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id == 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon(Icons.search, color: Colors.black),
-                                title: Text(tappa.esplorazione.split("\n")[1].split(":")[0].trim()),
-                                subtitle: Text(tappa.esplorazione.split("\n")[1].split(":")[1].trim()))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id == 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon(Icons.search, color: Colors.black),
-                                title: Text(tappa.esplorazione.split("\n")[2].split(":")[0].trim()),
-                                subtitle: Text(tappa.esplorazione.split("\n")[2].split(":")[1].trim()))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id == 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon(Icons.search, color: Colors.black),
-                                title: Text(tappa.esplorazione.split("\n")[3].split(":")[0].trim()),
-                                subtitle: Text(tappa.esplorazione.split("\n")[3].split(":")[1].trim()))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.esplorazione != "" && tappa.id == 3004)
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading:
-                                    Icon(Icons.search, color: Colors.black),
-                                title: Text(tappa.esplorazione.split("\n")[4].split(":")[0].trim()),
-                                subtitle: Text(tappa.esplorazione.split("\n")[4].split(":")[1].trim()))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.indicazioni != "")
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                                leading: Icon(Icons.map, color: Colors.black),
-                                title: Text("Indicazioni"),
-                                subtitle: Text(tappa.indicazioni))
-                          ],
-                        ),
-                      )
-                    : Card(),
-                (tappa.image != "")
-                    ? Card(
-                        child: Column(
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage(tappa.image),
-                            )
-                          ],
-                        ),
-                      )
-                    : Card()
-              ]))),
-
-      /*child: SingleChildScrollView(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Text(tappa.description),
-            Image(
-              image: AssetImage(tappa.image),
-            ),
-          ],
-        )),
-      ),*/
+              child: ListView(children: list_w))),
     );
   }
 }

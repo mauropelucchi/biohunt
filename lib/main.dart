@@ -68,14 +68,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "Esplora il Monte Canto",
           body:
-              "Cliccando sull'immagine di uno dei tre percorsi proposti potrai accedere al percorso e svolgere le attività proposte.\n\nPrima di partire consulta la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni.",
+              "Cliccando sulle immagini potrai accedere ai percorsi e sperimentare le attività proposte.\n\nPrima di partire ricordati di consultare la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni",
           image: _buildImage('help/img1.png'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Le tappe",
           body:
-              "Ogni percorso è composto da 6 tappe. Clicca sulla tappa per ottenere il tragitto, scoprire le attività proposte e leggere qualche curiosità sul territorio",
+              "Ogni percorso è composto da diverse tappe. Clicca su ciascuna tappa per visualizzare il tragitto, scoprire le attività proposte e leggere qualche curiosità sul territorio",
           image: _buildImage('help/img2.jpeg'),
           decoration: pageDecoration,
         ),

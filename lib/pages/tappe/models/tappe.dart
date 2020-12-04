@@ -13,8 +13,9 @@ class Tappe {
   static final dbImage = "image";
   static final dbEsplorazione = "esplorazione";
   static final dbIndicazioni = "indicazioni";
+  static final dbTitleEsplorazione = "titoloesplorazione";
 
-  String title, percorsoName, description, image, indicazioni, esplorazione;
+  String title, percorsoName, description, image, indicazioni, esplorazione, titoloesplorazione;
   int id, percorsoId, percorsoColor;
   double lat, lng;
   bool lastTappa;
@@ -25,6 +26,7 @@ class Tappe {
       @required this.percorsoId,
       @required this.lastTappa,
       this.description = "",
+      this.titoloesplorazione = "",
       this.image  = "",
       this.indicazioni = "",
       this.esplorazione = "",
@@ -41,6 +43,7 @@ class Tappe {
       @required this.percorsoId,
       @required this.lastTappa,
       this.description = "",
+      this.titoloesplorazione = "",
       this.image  = "",
       this.indicazioni = "",
       this.esplorazione = "",
@@ -59,6 +62,7 @@ class Tappe {
           description: (map[dbDescription]),
           image: (map[dbImage]),
           esplorazione: (map[dbEsplorazione]),
+          titoloesplorazione: (map[dbTitleEsplorazione]),
           indicazioni: (map[dbIndicazioni]),
           tappeStatus: TappaStatus.values[map[dbStatus]],
         );

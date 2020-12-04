@@ -65,12 +65,12 @@ class AboutUsScreen extends StatelessWidget {
                     ListTile(
                       leading: Image.asset("assets/labirinto.jpeg"),
                       title: Text(
-                        "Realizzato in collaborazione con Labirinto",
+                        "Realizzato in collaborazione con Cooperativa Labirinto",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
                       )
                     ),
                     ListTile(
-                      leading: Image.asset("assets/labirinto.jpeg"),
+                      leading: Icon(Icons.info, color: Colors.black),
                       title: Text(
                         "Con il contributo della Fondazione della Comunità Bergamasca",
                         key: ValueKey(AboutUsKeys.AUTHOR_NAME),
