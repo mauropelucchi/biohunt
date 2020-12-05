@@ -42,6 +42,10 @@ class AppDatabase {
         await _createPercorsoTable(db);
         await _createTappaTable(db);
         didInit = true;
+      }, onOpen: (Database db) async {
+                await _clean(db);
+        await _createPercorsoTable(db);
+        await _createTappaTable(db);
       });
   }
 
