@@ -31,7 +31,7 @@ class AppDatabase {
   Future _init() async {
       // Get a location using path_provider
       String path = join(await getDatabasesPath(), "tappe.db");
-      _database = await openDatabase(path, version: 1,
+      _database = await openDatabase(path, version: 2,
           onCreate: (Database db, int version) async {
         // When creating the db, create the table
         await _createPercorsoTable(db);
@@ -91,7 +91,7 @@ class AppDatabase {
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbIndicazioni},  ${Tappe.dbEsplorazione}, ${Tappe.dbImage}, ${Tappe.dbTitleEsplorazione})'
           ' VALUES(1001, "Partenza (dove parcheggiare)", 45.702771, 9.487119, 1, 0, 0,'
           '"", "",'
-          '"Nelle vicinanze della palestra puoi intravedere un frutteto; puoi lasciare la macchina in uno dei parcheggi disponibili davanti alle case di via Antonio Gramsci: la prima tappa si trova proprio lì di fronte. Da qui in avanti non avrai più bisogno di indicazioni: basta seguire la pista ciclabile e fidarti del tuo istinto di esploratore!",'
+          '"Nelle vicinanze della palestra puoi intravedere un frutteto; puoi lasciare la macchina in uno dei parcheggi disponibili davanti alle case di via Antonio Gramsci: la prima tappa si trova proprio lì di fronte. Da qui in avanti basta seguire la pista ciclabile, leggere le indicazioni e fidarti del tuo istinto di esploratore.",'
           '"assets/percorso1/1.jpg"'
           ',""'
           ');');
@@ -117,8 +117,8 @@ class AppDatabase {
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbIndicazioni},  ${Tappe.dbEsplorazione}, ${Tappe.dbImage}, ${Tappe.dbTitleEsplorazione})'
           ' VALUES(1004, "Attraversando il ponticello", 45.703952, 9.489376, 1, 0, 0,'
           '"La pista ciclabile che stai percorrendo parte dal Comune di Sotto il Monte Giovanni XXIII e, passando per Carvico, arriva alla stazione dei treni di Calusco. Da qui, nei pressi del ponte di ferro, puoi raggiungere in un attimo il Fiume Adda e la sua ciclabile.",'
-          '"",'
-          '"Mappa dei suoni: siediti in un luogo per circa 5 minuti. Prendi un foglio e segna una “X” al centro: quello è il punto in cui ti sei seduto. Quando senti un rumore prova a rappresentarlo sul foglio, indicando la direzione da cui lo senti arrivare. Puoi scrivere il nome dell’oggetto che crea il rumore (es. martello), il rumore che fa (es. tum tum) oppure disegnarlo in modo molto semplice. Se possibile, chiudi gli occhi mentre ascolti",'
+          '"Torna indietro e segui la pista ciclabile sterrata.",'
+          '"Mappa dei suoni: siediti in un luogo per circa 5 minuti. Prendi un foglio e segna una “X” al centro: quello è il punto in cui ti sei seduto. Quando senti un rumore prova a rappresentarlo sul foglio, indicando la direzione da cui lo senti arrivare. Puoi scrivere il nome dell’oggetto che crea il rumore (es. martello), il rumore che fa (es. tum tum) oppure disegnarlo in modo molto semplice. Se possibile, chiudi gli occhi mentre ascolti.",'
           '"assets/percorso1/4.png"'
           ',""'
           ');');
@@ -171,7 +171,7 @@ class AppDatabase {
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbIndicazioni},  ${Tappe.dbEsplorazione}, ${Tappe.dbImage}, ${Tappe.dbTitleEsplorazione})'
           ' VALUES(2002, "I Mulini", 45.713556, 9.477972, 2, 0, 0,'
           '"Il nome di questa frazione non è casuale. Non per niente nei boschi del Monte Canto potresti incontrare delle antiche ruote di pietra, identificabili con delle macine. Ricoperte dal muschio, osservale da vicino e prova a immaginare come dovevano essere questi luoghi tantissimi anni fa.",'
-          '"Segui il sentiero che va verso Villa D’Adda (alla tua sinistra) e percorrilo; il sentiero è caratterizzato da muretti a secco su entrambi i lati. Qui inizia la seconda tappa, clicca sul pulsante",'
+          '"Segui il sentiero che va verso Villa D’Adda (alla tua sinistra) e percorrilo; il sentiero è caratterizzato da muretti a secco su entrambi i lati. Qui inizia la seconda tappa, clicca sul pulsante.",'
           '"Il tuo posto magico: osserva il sentiero che prosegue verso l’alto, immagina un mondo magico appena dietro l’angolo. Poniti delle domande che ti aiutino a crearlo utilizzando la tua fantasia (e se dietro la curva vivessero degli elfi? E se in quel luogo gli alberi fossero tutti blu, o viola? E se ci fosse un paese formato solo da case sugli alberi?). Opzionale: disegnalo su un foglio.",'
           '"assets/percorso2/2.jpeg"'
           ',""'
@@ -180,7 +180,7 @@ class AppDatabase {
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbIndicazioni},  ${Tappe.dbEsplorazione}, ${Tappe.dbImage}, ${Tappe.dbTitleEsplorazione})'
           ' VALUES(2003, "Le Pietre", 45.713946, 9.477044, 2, 0, 0,'
           '"La dura pietra, i sassi, sono profondamente legati alla storia del Monte Canto, dove vi è ancora traccia di due antiche cave di pietra. Dal 2018 i muretti a secco, costruzioni presenti in tutte le culture del pianeta e nella storia dell’uomo, sono stati riconosciuti patrimonio mondiale dell’Unesco.",'
-          '"Una volta superati i muretti a secco significa che hai completato anche la seconda tappa! A breve raggiungerai la terza tappa, il lavatoio di Villa d’Adda",'
+          '"Una volta superati i muretti a secco significa che hai completato anche la seconda tappa! A breve raggiungerai la terza tappa, il lavatoio di Villa d’Adda.",'
           '"Storie di pietra: cerca quanti più tipi possibili di pietre, toccale (attento a non disturbare gli abitanti che stanno riposando al loro interno!), osservale con la lente (se ce l’hai), senti la loro consistenza: cos’hanno di diverso tra loro? Divertiti a cercare qualche pietra che ti ricordi altri oggetti.",'
           '"assets/percorso2/3.jpeg"'
           ',""'
@@ -225,7 +225,7 @@ class AppDatabase {
           '${Tappe.tblTappa} (${Tappe.dbId},${Tappe.dbTitle},${Tappe.dbLat},${Tappe.dbLng},${Tappe.dbPercorsoID},${Tappe.dbStatus},${Tappe.dbLastTappa}, ${Tappe.dbDescription}, ${Tappe.dbIndicazioni},  ${Tappe.dbEsplorazione}, ${Tappe.dbImage}, ${Tappe.dbTitleEsplorazione})'
           ' VALUES(3001, "Partenza (dove parcheggiare)", 45.707604, 9.498688, 3, 0, 0,'
           '"",'
-          '"Lascia la macchina nel parcheggio della Chiesa Parrocchiale; uscito dal parcheggio segui le indicazioni sulla cartellonista di fronte a te e prendi per Torre San Giovanni. Arrivato nei pressi di Ca’Maitino, prosegui in salita superando la Via Crucis. Giunto in cima alla collina per prima cosa goditi il panorama: hai raggiunto la prima tappa! Da qui in avanti non avrai più bisogno di indicazioni. Resta sempre sul sentiero principale in direzione Fontanella (sentiero n.893) tenendo gli occhi ben aperti sui cartelli e senza farti tentare da bivi o svolte inattese. Puoi anche decidere di deviare e perderti: anche questo fa parte della dura vita dell’esploratore!",'
+          '"Lascia la macchina nel parcheggio della Chiesa Parrocchiale; uscito dal parcheggio segui le indicazioni sulla cartellonistica di fronte a te e prendi per Torre San Giovanni. Arrivato nei pressi di Ca’ Maitino, prosegui in salita superando la Via Crucis. Giunto in cima alla collina per prima cosa goditi il panorama: hai raggiunto la prima tappa! Da qui in avanti non avrai più bisogno di indicazioni. Resta sempre sul sentiero principale in direzione Fontanella (sentiero n.893) tenendo gli occhi ben aperti sui cartelli e senza farti tentare da bivi o svolte inattese. Puoi anche decidere di deviare e perderti: anche questo fa parte della dura vita dell’esploratore!",'
           '"Istruzioni per l’uso: in questo percorso non troverai delle tappe specifiche in cui fermarti (se non la prima tappa e l’arrivo, ciascuna con la propria esplorazione) ma avrai a disposizione tutto il sentiero che si snoda nel bosco per portare a termine 5 esplorazioni. Non è necessario che tu segua l’ordine in cui ti vengono proposte; puoi anche lasciarti ispirare dalla natura che incontri e concluderle in ordine sparso.",'
           '"assets/percorso3/1.png"'
           ',""'
@@ -253,7 +253,7 @@ class AppDatabase {
           ' VALUES(3004, "Le 5 esplorazioni del sentiero", 45.713556, 9.477972, 3, 0, 0,'
           '"",'
           '"",'
-          '"Crea un piccolo oggetto artistico con materiale naturale: nascondilo e poi crea dei segnali sul terreno per ritrovarlo, utilizzando bastoni, foglie o altri sassolini|Trova e documenta facce, volti o personaggi mentre cammini nel bosco. Cercali nelle radici, tra i sassi, tra i rami degli alberi, nelle nuvole, ecc.|Esiste un richiamo particolare per attirare vicino gli uccelli del bosco: consiste in un semplice “pssh” ripetuto lentamente e in modo regolare tre o quattro volte. Ripeti la serie per alcune volte e poi fermati a osservare e ascoltare se qualche uccellino si è avvicinato. Usa il richiamo solo se sei sicuro di non disturbare uccelli che stanno facendo il nido.|Raccogli tutto il materiale che riesci per costruire una o più micro-capanne nel bosco. Scegli un posto che sia visibile anche dal sentiero, in modo che chi lo percorre possa ammirare il tuo villaggio in miniatura.|Fatti aiutare da un adulto e cammina a occhi chiusi per circa 50 metri. Tocca, senti, annusa. Cerca di ricordare e scrivi tutte le sensazioni provate senza la vista.",'
+          '"Crea un piccolo oggetto artistico con materiale naturale: nascondilo e poi crea dei segnali sul terreno per ritrovarlo, utilizzando bastoni, foglie o altri sassolini.|Trova e documenta facce, volti o personaggi mentre cammini nel bosco. Cercali nelle radici, tra i sassi, tra i rami degli alberi, nelle nuvole, ecc.|Esiste un richiamo particolare per attirare vicino gli uccelli del bosco: consiste in un semplice “pssh” ripetuto lentamente e in modo regolare tre o quattro volte. Ripeti la serie per alcune volte e poi fermati a osservare e ascoltare se qualche uccellino si è avvicinato. Usa il richiamo solo se sei sicuro di non disturbare uccelli che stanno facendo il nido.|Raccogli tutto il materiale che riesci per costruire una o più micro-capanne nel bosco. Scegli un posto che sia visibile anche dal sentiero, in modo che chi lo percorre possa ammirare il tuo villaggio in miniatura.|Fatti aiutare da un adulto e cammina a occhi chiusi per circa 50 metri. Tocca, senti, annusa. Cerca di ricordare e scrivi tutte le sensazioni provate senza la vista.",'
           '"assets/percorso3/4.jpeg"'
           ',"Un tesoro nascosto|Personaggi del bosco|Un richiamo speciale|Capanne in miniatura|Il sentiero invisibile"'
           ');');

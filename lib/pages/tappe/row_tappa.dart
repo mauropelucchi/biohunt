@@ -34,6 +34,9 @@ class TappaRow extends StatelessWidget {
             key: ValueKey("tappaIdKey_${tappe.id}"),
             margin: const EdgeInsets.symmetric(vertical: PADDING_TINY),
             decoration: BoxDecoration(
+              color: (tappe.tappeStatus == TappaStatus.PENDING || tappe.lastTappa)
+                  ? Colors.white
+                  : Colors.green.withOpacity(0.5),
               border: Border(
                 left: BorderSide(
                   width: 4.0,

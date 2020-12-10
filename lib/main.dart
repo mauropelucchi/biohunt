@@ -61,7 +61,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "#CULTURAaiPiediDelCanto",
           body:
-              "“Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima” (Keri Smith).\nUn progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca",
+              "“Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima”\n(Keri Smith).\n\nUn progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca",
           image: _buildImage('progetto.jpeg'),
           decoration: pageDecoration,
         ),

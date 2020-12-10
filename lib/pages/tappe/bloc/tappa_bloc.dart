@@ -40,7 +40,7 @@ class TappaBloc implements BlocBase {
 
   void filterByPercorso(int percorsoId) {
     _tappaDb
-        .getTappeByPercorso(percorsoId, status: TappaStatus.PENDING)
+        .getTappeByPercorso(percorsoId, status: null /*TappaStatus.PENDING*/ )
         .then((tappe) {
       if (tappe == null) return;
       _lastFilterStatus = Filter.byPercorso(percorsoId);

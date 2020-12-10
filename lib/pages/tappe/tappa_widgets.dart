@@ -32,12 +32,17 @@ class TappePage extends StatelessWidget {
               child: ListView.builder(
                   itemCount: list.length,
                   itemBuilder: (BuildContext context, int index) {
+                    Color color =
+                        (list[index].tappeStatus == TappaStatus.COMPLETE)
+                            ? Colors.grey
+                            : Colors.green;
                     return Dismissible(
                         key: ValueKey("swipe_${list[index].id}_$index"),
                         direction: DismissDirection.endToStart,
                         confirmDismiss: (DismissDirection direction) async {
                           var lastTappa = list[index].lastTappa;
-
+                          final TappaBloc _tappeBloc =
+                              BlocProvider.of<TappaBloc>(context);
                           if (lastTappa) {
                             return await showDialog(
                               context: context,
@@ -59,54 +64,75 @@ class TappePage extends StatelessWidget {
                             return await showDialog(
                               context: context,
                               builder: (BuildContext context) {
-                                return AlertDialog(
-                                  title: const Text("Conferma"),
-                                  content: const Text(
-                                      "Hai completato questa tappa?"),
-                                  actions: <Widget>[
-                                    FlatButton(
-                                        onPressed: () =>
-                                            Navigator.of(context).pop(true),
-                                        child: const Text("Tappa completata!")),
-                                    FlatButton(
-                                      onPressed: () =>
-                                          Navigator.of(context).pop(false),
-                                      child: const Text("Annulla"),
-                                    ),
-                                  ],
-                                );
+                                return (list[index].tappeStatus ==
+                                        TappaStatus.COMPLETE)
+                                    ? AlertDialog(
+                                        title: const Text("Conferma"),
+                                        content: const Text(
+                                            "Vuoi rivivere questa tappa?"),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                              onPressed: () {
+                                                var tappaID = list[index].id;
+                                                _tappeBloc.updateStatus(tappaID,
+                                                    TappaStatus.PENDING);
+                                                Navigator.of(context)
+                                                    .pop(false);
+                                              },
+                                              child: const Text(
+                                                  "Confermo!")),
+                                          FlatButton(
+                                            onPressed: () =>
+                                                Navigator.of(context)
+                                                    .pop(false),
+                                            child: const Text("Annulla"),
+                                          ),
+                                        ],
+                                      )
+                                    : AlertDialog(
+                                        title: const Text("Conferma"),
+                                        content: const Text(
+                                            "Hai completato questa tappa?"),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                              onPressed: () {
+                                                var tappaID = list[index].id;
+                                                _tappeBloc.updateStatus(tappaID,
+                                                    TappaStatus.COMPLETE);
+                                                Navigator.of(context)
+                                                    .pop(false);
+                                              },
+                                              child: const Text(
+                                                  "Tappa completata!")),
+                                          FlatButton(
+                                            onPressed: () =>
+                                                Navigator.of(context)
+                                                    .pop(false),
+                                            child: const Text("Annulla"),
+                                          ),
+                                        ],
+                                      );
                               },
                             );
                           }
                         },
-                        onDismissed: (DismissDirection direction) {
-                          var tappaID = list[index].id;
-                          final TappaBloc _tappeBloc =
-                              BlocProvider.of<TappaBloc>(context);
-
-                          if (direction == DismissDirection.endToStart) {
-                            String message = "";
-                            _tappeBloc.updateStatus(
-                                tappaID, TappaStatus.COMPLETE);
-                            message = "Tappa completata";
-                            SnackBar snackbar =
-                                SnackBar(content: Text(message));
-                            Scaffold.of(context).showSnackBar(snackbar);
-                          }
-                        },
-                        background: Container(
-                          color: Colors.grey,
-                        ),
+                        onDismissed: (DismissDirection direction) {},
+                        background: Container(),
                         secondaryBackground: Container(
-                          color: (!list[index].lastTappa)
-                              ? Colors.green
-                              : Colors.grey,
+                          color: (list[index].lastTappa ||
+                                  list[index].tappeStatus ==
+                                      TappaStatus.COMPLETE)
+                              ? Colors.grey
+                              : Colors.green,
                           child: ListTile(
                             trailing: Icon(
-                                (!list[index].lastTappa)
-                                    ? Icons.check
-                                    : Icons.done,
-                                color: Colors.white),
+                              (list[index].lastTappa ||
+                                      list[index].tappeStatus ==
+                                          TappaStatus.COMPLETE)
+                                  ? Icons.undo
+                                  : Icons.done,
+                              //color: Colors.white
+                            ),
                           ),
                         ),
                         child: TappaRow(list[index]));
