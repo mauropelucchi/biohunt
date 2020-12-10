@@ -36,7 +36,7 @@ class AboutUsScreen extends StatelessWidget {
                       leading: Icon(Icons.update, color: Colors.black),
                       title: Text("Version"),
                       subtitle: Text(
-                        "1.3.0",
+                        "1.4.0",
                         key: ValueKey(AboutUsKeys.VERSION_NUMBER),
                       ),
                     )
