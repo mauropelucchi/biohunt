@@ -1,16 +1,19 @@
 # biohunt
 
-A new Flutter project.
+#CULTURAaiPiediDelCanto è un progetto pensato per aprire lo sguardo su un diverso modo di vivere il proprio territorio, e nello specifico il Monte Canto, luogo di riferimento nella storia e nella cultura non solo dei suoi abitanti ma di tutta la provincia bergamasca. L’idea centrale del progetto è quella di riscoprire il territorio del Monte Canto in una chiave nuova e dinamica: semplici missioni esplorative permetteranno di vivere delle esperienze di vera immersione in natura, acquisendo un senso di maggior consapevolezza rispetto al valore di un ambiente naturale prezioso e ricco di storia. Fare esperienza della natura diventa relazione in ogni momento della vita: è esperienza autentica e non mediata che trasforma l’ordinario in straordinario.
 
-## Getting Started
+Questa applicazione (realizzata in Flutter), studiata e realizzata ad hoc, è il risultato di questo progetto: uno strumento concreto per riscoprire la vera essenza dell’esplorare, imparare a vedere con occhi nuovi ciò che ci circonda e scoprire, attraverso pillole di cultura, la storia di questo territorio.
 
-This project is a starting point for a Flutter application.
+## #CULTURAaiPiediDelCanto
 
-A few resources to get you started if this is your first Flutter project:
+> “Tu sei un esploratore. La tua missione è documentare e osservare il mondo intorno a te come se non l’avessi mai visto prima”
+(Keri Smith).
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Un progetto realizzato dall’Associazione Lumaca Ribelle, con il contributo della Fondazione della Comunità Bergamasca
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![alt text](img/1.png =100x)
+
+### Esplora il Monte Canto
+
+Cliccando sulle immagini potrai accedere ai percorsi e sperimentare le attività proposte.
+Prima di partire ricordati di consultare la sezione Crea il tuo Kit per non dimenticare alcuni oggetti fondamentali per le tue esplorazioni
